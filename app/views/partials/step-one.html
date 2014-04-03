@@ -1,0 +1,27 @@
+<section class="first step">
+	<h2>Следвай стъпките<br /> и разбери с кого си в стая</h2>
+	<h3>Попълни своята информация</h3>
+	<form method="POST" name="stepOneForm" ng-submit="gotoStepTwo()">
+		<div class="formRow">
+			<label for="firstName">Име</label>
+			<input type="text" id="firstName" name="firstName" placeholder="" />
+		</div>
+
+		<div class="formRow">
+			<label for="lastName">Фамилия</label>
+			<input type="text" id="lastName" name="lastName" placeholder="" />
+		</div>
+
+		<div class="formRow">
+			<label for="dorm">Номер на блок</label>
+			<input type="text" id="dorm" name="dorm" placeholder="" />
+		</div>
+
+		<div class="formRow">
+			<label for="room">Номер на стая</label>
+			<input type="text" id="room" name="room" placeholder="" />
+		</div>
+
+		<input type="submit" value="Продължи" class="submitButton" />
+	</form>
+</section>
