@@ -1,27 +1,32 @@
 <section class="first step">
 	<h2>Следвай стъпките<br /> и разбери с кого си в стая</h2>
-	<h3>Попълни своята информация</h3>
-	<form method="POST" name="stepOneForm" ng-submit="gotoStepTwo()">
+	<h3>Стъпка 1: Въведи своята информация</h3>
+	<form name="stepOneForm" ng-submit="gotoStepTwo(student, stepOneForm.$valid)" novalidate>
 		<div class="formRow">
 			<label for="firstName">Име</label>
-			<input type="text" id="firstName" name="firstName" placeholder="" />
+			<input type="text" id="firstName" name="firstName" ng-model="student.firstName" ng-minlength="1" ng-maxlength="50" required />
 		</div>
 
 		<div class="formRow">
 			<label for="lastName">Фамилия</label>
-			<input type="text" id="lastName" name="lastName" placeholder="" />
+			<input type="text" id="lastName" name="lastName" ng-model="student.lastName" ng-minlength="1" ng-maxlength="50" required />
 		</div>
 
 		<div class="formRow">
 			<label for="dorm">Номер на блок</label>
-			<input type="text" id="dorm" name="dorm" placeholder="" />
+			<input type="text" id="dorm" name="dorm" ng-model="student.dorm" ng-minlength="1" ng-maxlength="5" required />
 		</div>
 
 		<div class="formRow">
 			<label for="room">Номер на стая</label>
-			<input type="text" id="room" name="room" placeholder="" />
+			<input type="text" id="room" name="room" ng-model="student.room" ng-minlength="1" ng-maxlength="5" required />
 		</div>
 
-		<input type="submit" value="Продължи" class="submitButton" />
+		<div class="formRow">
+			<label for="social">Контакти</label>
+			<textarea name="social" id="social" placeholder="Вашият Email, Facebook, Телефон..." ng-model="student.social" required></textarea>
+		</div>
+
+		<input type="submit" value="Продължи" class="submitButton" ng-disabled="stepOneForm.$invalid" />
 	</form>
 </section>

@@ -1,23 +1,20 @@
 'use strict';
 
-angular.module('dormsbgApp')
-.controller('MainCtrl', function ($scope, $http, $location) {
-	$scope.gotoStepTwo = function () {
+var dormsApp = angular.module('dormsbgApp');
+
+dormsApp.controller('MainCtrl', function ($scope, $http, $location) {
+	$scope.gotoStepTwo = function (studentViewModel, valid) {
+		console.log(valid);
 		var data = stepOneForm;
 
-		var Student = {
-			firstName: data.firstName.value,
-			lastName: data.lastName.value,
-			dorm: data.dorm.value,
-			room: data.room.value
-		};
-		
-		$http.post('/api/stepOne', Student)
+		$http.post('/api/stepOne', studentViewModel)
 		.success(function(data) {
-			console.log(data);
             $location.path('/step-two');
         }).error(function(err) {
             console.log(err);
         });
+	}
+
+	$scope.finishRequest = function (studentInfo) {
 	}
 });
