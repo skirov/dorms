@@ -251,7 +251,8 @@ form .submitButton:hover {
 /**
  * Form validity
  */
-form input.ng-invalid {
+form input.ng-invalid.ng-dirty,
+form textarea.ng-invalid.ng-dirty {
     border: 1px solid #d16e70;
     background: #fceaea;
 }

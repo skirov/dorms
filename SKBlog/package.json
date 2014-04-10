@@ -1,0 +1,9 @@
+{
+    "name": "StoyanKirov-personal-site",
+    "version": "0.1.0",
+    "devDependencies": {
+        "grunt": "latest",
+        "grunt-contrib-jshint": "latest",
+        "grunt-contrib-cssmin": "latest"
+    }
+}

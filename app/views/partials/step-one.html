@@ -14,12 +14,12 @@
 
 		<div class="formRow">
 			<label for="dorm">Номер на блок</label>
-			<input type="text" id="dorm" name="dorm" ng-model="student.dorm" ng-minlength="1" ng-maxlength="5" required />
+			<input type="text" id="dorm" name="dorm" ng-model="student.dorm" ng-minlength="1" ng-maxlength="3" ng-pattern="/^\d{1,2}[абвгдежзийклмнопрстуфхцчшщюяАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЮЯ]{0,1}$/" required />
 		</div>
 
 		<div class="formRow">
 			<label for="room">Номер на стая</label>
-			<input type="text" id="room" name="room" ng-model="student.room" ng-minlength="1" ng-maxlength="5" required />
+			<input type="text" id="room" name="room" ng-model="student.room" ng-minlength="1" ng-maxlength="4" ng-pattern="/^\d{1,4}[абвгдежзийклмнопрстуфхцчшщюяАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЮЯ]{0,1}$/" required />
 		</div>
 
 		<div class="formRow">
@@ -27,6 +27,6 @@
 			<textarea name="social" id="social" placeholder="Вашият Email, Facebook, Телефон..." ng-model="student.social" required></textarea>
 		</div>
 
-		<input type="submit" value="Продължи" class="submitButton" ng-disabled="stepOneForm.$invalid" />
+		<input type="submit" value="Продължи" class="submitButton" />
 	</form>
 </section>

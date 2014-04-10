@@ -8,11 +8,11 @@ angular.module('dormsbgApp', [
     $routeProvider
       .when('/', {
         templateUrl: 'partials/step-one',
-        controller: 'MainCtrl'
+        controller: 'MainController'
       })
       .when('/step-two', {
         templateUrl: 'partials/step-two.html',
-        controller: 'MainCtrl'
+        controller: 'MainController'
       })
       .otherwise({
         redirectTo: '/'
